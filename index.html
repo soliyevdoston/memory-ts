@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <!-- Bosh sahifa (Sozlamalar) - O'zgartirilmadi -->
+      <section class="page main-page">
+        <div class="container">
+          <h2>Memory</h2>
+          <div class="setting">
+            <div class="option first">
+              <p class="select-itom">Select Theme</p>
+              <div class="buttons" data-group="theme">
+                <button class="option-btn active">Numbers</button>
+                <button class="option-btn">Icons</button>
+              </div>
+            </div>
+            <div class="option">
+              <p class="select-itom">Number of Players</p>
+              <div class="buttons" data-group="players">
+                <button class="option-btn active">1</button>
+                <button class="option-btn">2</button>
+                <button class="option-btn">3</button>
+                <button class="option-btn">4</button>
+              </div>
+            </div>
+            <div class="option">
+              <p class="select-itom">Grid Size</p>
+              <div class="buttons" data-group="grid">
+                <button class="option-btn active">4 x 4</button>
+                <button class="option-btn">4 x 6</button>
+                <button class="option-btn">6 x 6</button>
+              </div>
+            </div>
+            <button class="start-btn">Start Game</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- O'yin qismi -->
+      <div class="game-list hidden">
+        <header class="header-gme">
+          <h2 style="color: #152938; margin: 0">memory</h2>
+          <div>
+            <button class="btn-res" onclick="restartGame()">Restart</button>
+            <button class="btn-new" onclick="location.reload()">
+              New Game
+            </button>
+          </div>
+        </header>
+        <section class="game-page">
+          <div class="grid-container">
+            <div class="grid"></div>
+          </div>
+
+          <!-- 1 kishi uchun time va move -->
+          <div class="player-one-stats hidden">
+            <div class="stat-box">
+              <span class="label">Time</span>
+              <span class="value" id="timer">0:00</span>
+            </div>
+            <div class="stat-box">
+              <span class="label">Moves</span>
+              <span class="value" id="moves">0</span>
+            </div>
+          </div>
+
+          <!-- Ko'p o'yinchilar uchun ochkolar -->
+          <div class="multi-player-stats hidden"></div>
+        </section>
+      </div>
+
+      <!-- Natija  -->
+      <div id="modal" class="modal-overlay hidden">
+        <div class="modal-content">
+          <h1 id="winner-text">Player 3 Wins!</h1>
+          <p>Game over! Here are the results...</p>
+          <div id="results-list"></div>
+          <div class="modal-btns">
+            <button class="btn-res" onclick="restartGame()">Restart</button>
+            <button class="btn-new" onclick="location.reload()">
+              Setup New Game
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

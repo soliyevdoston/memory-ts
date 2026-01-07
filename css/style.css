@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  background-color: #ffffff;
+}
+
+.hidden {
+  display: none !important;
+}
+.main {
+  min-height: 100vh;
+  position: relative;
+}
+.page {
+  width: 100%;
+}
+.main-page {
+  background-color: #152938;
+  height: 100vh;
+}
+.container {
+  width: 654px;
+  margin: 0 auto;
+}
+h2 {
+  color: #fcfcfc;
+  font-size: 40px;
+  text-align: center;
+
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+/* Sozlamalar menyusi */
+.setting {
+  background-color: #fcfcfc;
+  border-radius: 20px;
+  padding: 40px;
+}
+.option {
+  margin-bottom: 25px;
+}
+.select-itom {
+  font-size: 20px;
+  font-weight: bold;
+  color: #7191a5;
+}
+.buttons {
+  display: flex;
+  gap: 15px;
+  padding-top: 16px;
+  padding-bottom: 5px;
+}
+.option-btn {
+  flex: 1;
+  height: 52px;
+  background: #bcced9;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 26px;
+  border: none;
+  cursor: pointer;
+}
+.option-btn:hover {
+  background: #6395b8;
+}
+.option-btn:active {
+  transform: scale(0.98);
+}
+.option-btn.active {
+  background: #304859;
+  transition: all 0.3s ease;
+}
+.start-btn {
+  width: 100%;
+  height: 70px;
+  background: #fda214;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 35px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.start-btn:hover {
+  background: #ffb84a;
+}
+.start-btn:active {
+  transform: scale(0.98);
+}
+
+/* O'yin  */
+.game-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-gme {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.btn-res {
+  width: 127px;
+  height: 52px;
+  font-size: 20px;
+  background: #fda214;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-res:hover {
+  background: #ffb84a;
+}
+.btn-res:active {
+  transform: scale(0.98);
+}
+.btn-new {
+  height: 52px;
+  font-size: 20px;
+  background: #dfe7ec;
+  color: #304859;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.btn-new:hover {
+  background: #6395b8;
+}
+.btn-new:active {
+  transform: scale(0.98);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.grid-cell {
+  width: 70px;
+  height: 70px;
+  background: #304859;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: transparent;
+  transition: 0.3s;
+}
+.grid-cell.open {
+  background: #bcced9;
+  color: #fff;
+}
+.grid-cell.matched {
+  background: #fda214 !important;
+  color: #fff !important;
+  cursor: default;
+}
+.grid-cell img {
+  width: 40px;
+  display: none;
+  filter: brightness(0) invert(1);
+}
+.grid-cell.open img,
+.grid-cell.matched img {
+  display: block;
+}
+
+/* O'yinchi statistikasi  */
+.player-one-stats,
+.multi-player-stats {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  justify-content: center;
+}
+.stat-box,
+.player-card {
+  background: #dfe7ec;
+  padding: 15px 25px;
+  border-radius: 10px;
+  min-width: 180px;
+  text-align: center;
+  position: relative;
+}
+.label {
+  display: block;
+  color: #7191a5;
+  font-weight: bold;
+  font-size: 16px;
+}
+.value {
+  display: block;
+  color: #304859;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.player-card.active {
+  background: #fda214;
+}
+.player-card.active .label,
+.player-card.active .value {
+  color: #fff;
+}
+.player-card.active::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #fda214;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.modal-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 500px;
+  text-align: center;
+}
+.res-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #dfe7ec;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.res-item.winner {
+  background: #152938;
+  color: #fff;
+}
+.modal-btns {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
