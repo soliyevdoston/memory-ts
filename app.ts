@@ -252,6 +252,3 @@ function restartGame(): void {
   qs<HTMLElement>("#modal").classList.add("hidden");
   initGame();
 }
-
-// Compiler Options
-// Compiler options belong in a separate tsconfig.json file, not in source.
